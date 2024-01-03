@@ -12,7 +12,6 @@ def main():
 
     # Sidebar for user input
     st.sidebar.header("User Input")
-    uploaded_file = st.file_uploader("Choose a file")
     account_balance = st.sidebar.number_input("Enter initial account balance:", min_value=0.0, step=1.0, value=1000.0)
     transactions = st.sidebar.text_area("Enter transactions (comma-separated):", "100, -50, 200", key="transactions")
 
@@ -27,7 +26,7 @@ def main():
     st.write(f"Transactions: {transactions}")
     st.write(f"Updated Account Balance: ${updated_balance:.2f}")
 
-
+    uploaded_file = st.file_uploader("Choose a file")
     if uploaded_file is not None:
         # To read file as bytes:
         bytes_data = uploaded_file.getvalue()
