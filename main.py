@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 # Function to simulate bank account follow-up
 def bank_account_follow_up(account_balance, transactions):
