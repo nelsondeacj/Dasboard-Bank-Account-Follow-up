@@ -60,9 +60,10 @@ def main():
 
         pie_chart = create_pie_chart(bilan['category'], bilan['amount'])
 
+        st.write(bilan)
         st.pyplot(pie_chart)
 
-        st.write(bilan)
+      
         st.write(df)
 
     else:
