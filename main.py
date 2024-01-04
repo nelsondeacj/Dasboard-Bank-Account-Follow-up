@@ -25,7 +25,7 @@ def main():
 
 
     # Bank account follow-up
-    updated_balance = bank_account_follow_up(account_balance, transactions)
+    #updated_balance = bank_account_follow_up(account_balance, transactions)
 
     # Display results
     #st.write(f"Initial Account Balance: ${account_balance:.2f}")
