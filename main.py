@@ -12,7 +12,7 @@ def main():
 
     # Sidebar for user input
     st.sidebar.header("User Input")
-    uploaded_file = st.file_uploader("Choose a file")
+    uploaded_file = st.sidebar.file_uploader("Choose a file")
     account_balance = st.sidebar.number_input("Enter initial account balance:", min_value=0.0, step=1.0, value=1000.0)
     transactions = st.sidebar.text_area("Enter transactions (comma-separated):", "100, -50, 200", key="transactions")
 
