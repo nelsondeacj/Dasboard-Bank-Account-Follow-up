@@ -57,7 +57,6 @@ def main():
         df_expenses=df[df['amount']>0]
 
         bilan=df_expenses.groupby(["category"]).sum("amount").reset_index()
-        bilan
 
         pie_chart = create_pie_chart(bilan['category'], bilan['amount'])
 
