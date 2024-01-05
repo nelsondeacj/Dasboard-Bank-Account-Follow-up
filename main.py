@@ -79,7 +79,7 @@ def main():
         if input_text:
             filtered_df = filter_by_category(df,"title",input_text)
 
-            filtered_sum=filtered_df["title"].sum()
+            filtered_sum=filtered_df["amount"].sum()
             st.write(f"Sum of expenses of keyword: {filtered_sum}")
 
             st.write("Filtered DataFrame:")
