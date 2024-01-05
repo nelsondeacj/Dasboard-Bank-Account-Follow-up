@@ -8,6 +8,10 @@ def bank_account_follow_up(account_balance, transactions):
     updated_balance = account_balance + sum(transactions)
     return updated_balance
 
+def filter_by_category(df,column_name,input_text):
+    filtered_df = df[df[column_name].str.contains(input_text, case=False)]
+    return filtered_df
+
 def create_pie_chart(labels, sizes):
     fig, ax = plt.subplots()
     ax.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
@@ -23,6 +27,12 @@ def main():
     uploaded_file = st.sidebar.file_uploader("Choose a file")
     account_limit = st.sidebar.number_input("Enter account limit to follwo (Not implemented):", min_value=0.0, step=1.0, value=1000.0)
     #transactions = st.sidebar.text_area("Enter transactions (comma-separated):", "100, -50, 200", key="transactions")
+
+
+
+def main():
+    
+
 
 
 
@@ -63,8 +73,28 @@ def main():
         st.write(bilan)
         st.pyplot(pie_chart)
 
-      
         st.write(df)
+
+        #text input to filter
+        st.title("Enter keyword to know the amount expense")
+        input_text = st.text_input("Enter text to filter categories:")
+
+        # Display filtered results
+        if input_text:
+            filtered_df = filter_by_category(df,"title",input_text)
+
+            filtered_sum=filtered_df["title"].sum()
+            st.write(f"Sum of expenses of keyword: {filtered_sum}")
+
+            st.write("Filtered DataFrame:")
+            st.write(filtered_df)
+
+
+
+        else:
+            st.write("Enter text above to filter categories.")
+      
+        
 
     else:
         st.write(f"Upload a Nubank csv file to start the App")
