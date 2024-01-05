@@ -18,8 +18,11 @@ def create_pie_chart(labels, sizes):
     ax.axis('equal')  # Equal aspect ratio ensures that the pie chart is circular.
     return fig
 
-# Streamlit app
+#Streamlit app
+
 def main():
+    
+
     st.title("Bank Account Follow-Up App")
 
     # Sidebar for user input
@@ -27,13 +30,6 @@ def main():
     uploaded_file = st.sidebar.file_uploader("Choose a file")
     account_limit = st.sidebar.number_input("Enter account limit to follwo (Not implemented):", min_value=0.0, step=1.0, value=1000.0)
     #transactions = st.sidebar.text_area("Enter transactions (comma-separated):", "100, -50, 200", key="transactions")
-
-
-
-def main():
-    
-
-
 
 
     # Bank account follow-up
